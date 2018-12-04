@@ -9,7 +9,7 @@ Basicamente deve-se ler 3 sensores de tópicos diferentes e exibir os respectivo
 
 ### MQTT 
 
-MQTT é um protocolo de comunicação chamado de Message Queuing Telemetry Transport. É utilizado para fazer a comunicação entre máquinas. É um protocolo antigo, ams que ganhou força e está sendo bastante utilizado em soluções para IoT.
+MQTT é um protocolo de comunicação chamado de Message Queuing Telemetry Transport. É utilizado para fazer a comunicação entre máquinas. É um protocolo antigo, mas que ganhou força e está sendo bastante utilizado em soluções para IoT.
 
 O protocolo MQTT utiliza um padrão de Publish and Subscribe, no qual haverão três conceitos fundamentais:
 * Publisher
@@ -25,4 +25,16 @@ Publisher é aquele que publica algum dado, que transmite uma informação. O Br
 
 Esta é uma biblioteca em Python do protocolo MQTT.
 
+Comando para instalá-lo:
+
 <b>pip install paho-mqtt</b>
+
+#### Mosquitto
+
+Este é o programa utilizado para ser o Broker da comunicação dos nosso protocolo. Os comandos para instalá-lo no Linux são descritos abaixo:
+
+<b>sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa</b>
+<b>sudo apt-get update</b>
+<b>sudo apt-get install mosquitto</b>
+<b>sudo apt-get install mosquitto-clients</b>
+
