@@ -34,7 +34,10 @@ Comando para instalá-lo:
 Este é o programa utilizado para ser o Broker da comunicação dos nosso protocolo. Os comandos para instalá-lo no Linux são descritos abaixo:
 
 <b>sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa</b>
+
 <b>sudo apt-get update</b>
+
 <b>sudo apt-get install mosquitto</b>
+
 <b>sudo apt-get install mosquitto-clients</b>
 
