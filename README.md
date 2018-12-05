@@ -27,17 +27,17 @@ Esta é uma biblioteca em Python do protocolo MQTT.
 
 Comando para instalá-lo:
 
-<b>pip install paho-mqtt</b>
+`pip install paho-mqtt`
 
 #### Mosquitto
 
 Este é o programa utilizado para ser o Broker da comunicação dos nosso protocolo. Os comandos para instalá-lo no Linux são descritos abaixo:
 
-<b>sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa</b>
+`sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa`
 
-<b>sudo apt-get update</b>
+`sudo apt-get update`
 
-<b>sudo apt-get install mosquitto</b>
+`sudo apt-get install mosquitto`
 
-<b>sudo apt-get install mosquitto-clients</b>
+`sudo apt-get install mosquitto-clients`
 
