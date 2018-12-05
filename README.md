@@ -20,7 +20,7 @@ Publisher é aquele que publica algum dado, que transmite uma informação. O Br
 
 ### Como MQTT funciona [1]
 
-É dividida em quatro estágios: conexão, autenticação, comunicação e término. Um cliente começa pela criação de uma conexão em TCP/IP para ser Broker por meio do uso de uma porta padrão ou uma porta personalizada definida pelos operadores do Broker. Quando a conexão é estabelecida, tem a possibilidade do servidor continuar uma seção antiga se é fornecido o reúso da identidade do cliente.
+É dividida em quatro estágios: conexão, autenticação, comunicação e término. Um cliente começa pela criação de uma conexão em TCP/IP para o Broker por meio do uso de uma porta padrão ou uma porta personalizada definida pelos operadores do Broker. Quando a conexão é estabelecida, tem a possibilidade do servidor continuar uma seção antiga se é fornecido o reúso da identidade do cliente.
 
 A porta padrão para comunicação não encriptadas é 1883. Para comunicação encriptada (Secure Sockets Layer (SSL)/Transport Layer Security (TLS)), é 8883. Durante o "handshake" do SSL/TTL, o cliente valida o certificado do servidor para auntenticar o servidor. O cliente pode também pode fornecer um certificado do cliente para o Broker durante o "handshake", o qual o Broker pode usar para autenticar o cliente. Enquanto não é especificamente parte dos requerimentos do MQTT, tem se tornado comum para o Broker utilizar autenticação de cliente com certificados SSL/TLS da parte do cliente.
 
