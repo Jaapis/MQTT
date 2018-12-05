@@ -1,6 +1,8 @@
 import paho.mqtt.client as mqtt
 import time
 
+from random import randrange
+
 def on_log(client, userdata, level, buf):
     print("  log: "+buf)
 
@@ -21,8 +23,11 @@ def on_message(client, userdata, msg):
 # Define broker
 broker = "127.0.0.1"
 
+publisher = input("Nome do publisher: ")
+
+
 # Cria nova instância
-client = mqtt.Client("NOME_SENSOR")
+client = mqtt.Client(publisher)
 
 # Callbacks
 client.on_connect = on_connect
@@ -33,18 +38,25 @@ client.on_message = on_message
 # Conecta ao broker
 print("Conectando ao broker: ", broker)
 client.connect(broker)
-client.loop_start()
 
-# Subscribe
-client.subscribe("house/sensor1")
+# Subscribe (publisher não precisa subscrever nada)
+#client.subscribe("house/sensor1")
 
 # Publish
-client.publish("house/sensor1", "mensagem de teste")
+while(1):
+    client.loop_start()
 
-# Timer
-#print("Timer... ")
-time.sleep(4)
-client.loop_stop()
+    msg = str(randrange(0,9))
+    topic = "house/" + publisher
+    print("Publicando em: ", topic, " msg: ", msg )
+    client.publish(topic, msg)
+
+    # Timer
+    #print("Timer... ")
+    time.sleep(4)
+    client.loop_stop()
+
+
 
 # Desconecta do broker
 client.disconnect()
