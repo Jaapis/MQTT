@@ -21,12 +21,23 @@ def on_disconnect(client, userdata, flags, rc=0):
 def on_message(client, userdata, msg):
     topic=msg.topic
     m_decode=str(msg.payload.decode("utf-8","ignore"))
-    print("Mensagem recebida:", topic,  m_decode)
+    print("Mensagem recebida: \t", topic, "\tmsg: \t",  m_decode)
 
 # Define broker
 broker = "127.0.0.1"
-
+#broker = input("Endereço do broker: ")
 client_name = input("Nome do subscriber: ")
+
+topics = []
+end = "sim"
+
+while not (end == "n" or end == "no"):
+    topico = input("Nome do topico: ")
+    publisher = input("Nome do publisher: ")
+    topics = topics + [(topico+"/"+publisher,0)]
+    end = input("Adicionar mais subscribes? (s/n): ")
+    print(end)
+
 
 # Cria nova instância
 client = mqtt.Client(client_name)
@@ -39,7 +50,7 @@ client.on_disconnect = on_disconnect
 client.on_message = on_message
 
 # Topics (são representados por tuplas)
-topics = [("house/sensor1", 0), ("house/sensor2", 0)]
+#topics = [("house/sensor1", 0), ("house/sensor2", 0)]
 topic_ack=[]
 
 # Rotina de conexão
@@ -54,12 +65,12 @@ except:
 client.loop_start()
 
 # Subscribe
-print("Subscribe: " + str(topics))
+print("Subscribe: " + str(topics) + "\n")
 for t in topics:
     try:
         r = client.subscribe(t)
         if r[0] == 0:
-            logging.info("Subscribed: " + str(t[0]) + "Código: " + str(r))
+            logging.info("Subscribed: " + str(t[0]) + " Código: " + str(r))
             topic_ack.append([t[0], r[1], 0])
         else:
             logging.info("Erro: " + str(r))

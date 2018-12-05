@@ -22,7 +22,8 @@ def on_message(client, userdata, msg):
 
 # Define broker
 broker = "127.0.0.1"
-
+#broker = input("Endereço do broker: ")
+topico = input("Nome do topico: ")
 publisher = input("Nome do publisher: ")
 
 
@@ -41,22 +42,22 @@ client.connect(broker)
 
 # Subscribe (publisher não precisa subscrever nada)
 #client.subscribe("house/sensor1")
-
+client.loop_start()
 # Publish
 while(1):
-    client.loop_start()
+    time.sleep(1)
 
     msg = str(randrange(0,9))
-    topic = "house/" + publisher
-    print("Publicando em: ", topic, " msg: ", msg )
+    topic = topico + "/" + publisher
+    print("Publicando em: \t", topic, "\tmsg: \t", msg )
     client.publish(topic, msg)
 
     # Timer
     #print("Timer... ")
     time.sleep(4)
-    client.loop_stop()
+    
 
-
+client.loop_stop()
 
 # Desconecta do broker
 client.disconnect()
