@@ -19,9 +19,17 @@ O protocolo MQTT utiliza um padrão de Publish and Subscribe, no qual haverão t
 Publisher é aquele que publica algum dado, que transmite uma informação. O Broker retransmite esses dados e os retransmite para seus respectivos Subscribers. Subscribers são aqueles que possuem a assinatura de que querem receber determinado dado.
 
 
-### Instalações necessárias
+## Instalações necessárias
 
-#### Paho
+### Python 
+
+Linguagem utilizada no trabalho (versão 3.6.5).
+
+Comando para instalá-lo:
+
+`sudo apt-get install python3.6`
+
+### Paho
 
 Esta é uma biblioteca em Python do protocolo MQTT.
 
@@ -29,7 +37,7 @@ Comando para instalá-lo:
 
 `pip install paho-mqtt`
 
-#### Mosquitto
+### Mosquitto
 
 Este é o programa utilizado para ser o Broker da comunicação dos nosso protocolo. Os comandos para instalá-lo no Linux são descritos abaixo:
 
@@ -40,4 +48,12 @@ Este é o programa utilizado para ser o Broker da comunicação dos nosso protoc
 `sudo apt-get install mosquitto`
 
 `sudo apt-get install mosquitto-clients`
+
+Para rodar o Mosquitto:
+
+`sudo mosquitto -v`
+
+## Como funciona
+
+Primeiro instala-se o Mosquitto. Em seguida pode-se abrir tanto Publisher quanto Subscriber. Ao rodar o código serão pedidas informações para endereço do broker e respectivamente pedir nome do Subscriber e nomes dos tópicos e Publishers. A partir das configurações prontas o broker se encarrega de gerenciar Publishers e Subscribers.
 
