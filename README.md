@@ -2,9 +2,9 @@
 Trabalho de Redes de Computadores 2018 2º semestre.
 
 Equipe:  
-* Rodrigo Toshiaki Horie 26620; 
-* Tiago Coli Resende 2016000103; 
-* Tercio Naoki Sato  30697;
+* Rodrigo Toshiaki Horie 26620 
+* Tiago Coli Resende 2016000103 
+* Tercio Naoki Sato  30697
 
 Implementar uma aplicação usando protcolo MQTT.
 
