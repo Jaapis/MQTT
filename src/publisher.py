@@ -21,8 +21,8 @@ def on_message(client, userdata, msg):
     print("Mensagem recebida:\n", m_decode)
 
 # Define broker
-broker = "127.0.0.1"
-#broker = input("Endereço do broker: ")
+#broker = "127.0.0.1"
+broker = input("Endereço do broker: ")
 topico = input("Nome do topico: ")
 publisher = input("Nome do publisher: ")
 
